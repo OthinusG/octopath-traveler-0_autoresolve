@@ -79,3 +79,19 @@ vsxmake2022
 
 # xwin
 xwin/*
+# OT0 auto-resolve local artifacts
+.local/
+dist/
+__pycache__/
+OT0AutoResolve.log
+evidence/raw/
+evidence/dumps/
+*.sav
+*.pak
+*.ucas
+*.utoc
+*.uasset
+*.uexp
+*.ubulk
+UE4SS.log
+UE4SS-ObjectDump.txt
