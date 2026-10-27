@@ -61,3 +61,17 @@ Training uses basis-point rates and native float multiplication by 0.0001 follow
 - UE4SS experimental builds can regress or have game-specific launch failures.
 - OT0 encounter logic and settlement differ from OT1; incorrect hooks could skip protected content or corrupt progression.
 - A successful game launch or UE4SS log alone does not validate encounter safety or reward correctness.
+
+## Repository and homepage maintenance — 2026-10-27
+
+Replace the inherited UE4SS project tree with the OT0 mod source, following the OT1 repository layout. Preserve upstream history and its original MIT notice; retain the OT0 native module, Lua bootstrap, tests, build tools, bilingual documentation and screenshots. Do not change gameplay behavior or checked-in shipping code.
+
+Reuse the OT1 static bilingual documentation site and Pages workflow as the visual and deployment reference. Keep its layout, typography, colors and responsive behavior; replace game-specific copy, screenshots, versions, installation paths and repository links with verified OT0 information. The site has no backend or live data. Use the existing OT0 images and validate both languages at desktop and mobile widths before publication.
+
+Tasks and acceptance:
+- Remove UE4SS source, submodules, build tooling, inherited workflows and CNAME from the current tree without rewriting history.
+- Add focused mod validation CI and Pages deployment, then update repository About, topics and homepage URL.
+- Run Lua syntax/bootstrap, C++ logic, Windows native build and packaging checks; compare all mod/native files with the prior commit.
+- Check site links, images, installation/build instructions and responsive screenshots. Verify the remote source tree, successful CI/Pages runs and public HTTP responses.
+
+Risks: deleting inherited files must not remove OT0-owned native code or licensing notices. Public documentation and archives must exclude local diagnostics, game data, saves, binaries and host-specific details. Keep existing runtime evidence and limits unchanged.

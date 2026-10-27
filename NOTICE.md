@@ -8,4 +8,5 @@ uses OT0-specific native interfaces and build checks. No game assets, save data,
 PDBs, SDK dumps, or UE4SS binaries are included.
 
 No separate redistribution license has been granted for the OT0 mod source;
-see [LICENSE](LICENSE). UE4SS retains its own upstream license.
+all rights are reserved. The original UE4SS MIT notice is preserved in
+[LICENSES/UE4SS-MIT.txt](LICENSES/UE4SS-MIT.txt) and applies only to UE4SS.

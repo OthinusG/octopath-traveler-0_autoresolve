@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f1f3f8">
+    <meta name="description" content="OT0 Auto Resolve automatically resolves eligible over-levelled ordinary encounters. Check compatibility, installation, and settings.">
+    <link rel="canonical" href="https://othinusg.github.io/octopath-traveler-0_autoresolve/">
+    <link rel="alternate" hreflang="en" href="https://othinusg.github.io/octopath-traveler-0_autoresolve/">
+    <link rel="alternate" hreflang="zh-CN" href="https://othinusg.github.io/octopath-traveler-0_autoresolve/zh.html">
+    <link rel="alternate" hreflang="x-default" href="https://othinusg.github.io/octopath-traveler-0_autoresolve/">
+    <meta property="og:title" content="OT0 Auto Resolve · Automatic Encounter Resolution">
+    <meta property="og:description" content="Compatibility, installation, and settings for OT0 Auto Resolve v0.1.0.">
+    <meta property="og:url" content="https://othinusg.github.io/octopath-traveler-0_autoresolve/">
+    <link rel="icon" href="assets/octopath-logo.png" type="image/png" sizes="256x256">
+    <link rel="stylesheet" href="assets/site.css?v=octopath-brand-1">
+    <title>OT0 Auto Resolve · Automatic Encounter Resolution</title>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="#top" aria-label="OT0 Auto Resolve home">
+          <img class="brand-mark" src="assets/octopath-logo.png" width="48" height="48" alt="Octopath Traveler 0">
+          <span class="brand-name">Auto Resolve</span>
+        </a>
+        <nav class="header-links" aria-label="Project links">
+          <a href="https://github.com/OthinusG/octopath-traveler-0_autoresolve">Source</a>
+          <a href="https://github.com/OthinusG/octopath-traveler-0_autoresolve/blob/main/docs/VALIDATION.md">Validation</a>
+        </nav>
+        <nav class="language-switch" aria-label="Language">
+          <a href="./" lang="en" aria-current="page">English</a>
+          <a href="zh.html" lang="zh-CN">中文</a>
+        </nav>
+        <a class="header-download" href="https://github.com/OthinusG/octopath-traveler-0_autoresolve/archive/refs/heads/main.zip">Source v0.1.0 <span aria-hidden="true">↓</span></a>
+      </div>
+    </header>
+
+    <main id="top" class="page-shell">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="https://github.com/OthinusG/octopath-traveler-0_autoresolve">Project repository</a>
+        <span aria-hidden="true">/</span>
+        <span>Mod details</span>
+      </nav>
+
+      <section class="hero card" aria-labelledby="page-title">
+        <div class="hero-copy">
+          <img class="hero-logo" src="assets/octopath-logo.png" width="112" height="112" alt="Octopath Traveler 0">
+          <p class="eyebrow">OCTOPATH TRAVELER 0 · UNOFFICIAL MOD</p>
+          <h1 id="page-title">Automatic Encounter Resolution</h1>
+          <p class="hero-summary">Skip the battle transition and award rewards through native game rules when your party outlevels ordinary random encounters.</p>
+          <div class="tag-list" aria-label="Version and compatibility">
+            <span class="tag tag-version">v0.1.0</span>
+            <span class="tag">Windows · Steam</span>
+            <span class="tag">Build 22012444</span>
+            <span class="tag">UE4SS 3.0.1-1181-g83330635</span>
+          </div>
+        </div>
+        <div class="download-panel">
+          <div class="release-meta">
+            <div><span>Current version</span><strong>0.1.0</strong></div>
+            <div><span>Game version</span><strong>Steam · 22012444</strong></div>
+            <div><span>Loader</span><strong>UE4SS 3.0.1-1181-g83330635 (installed separately)</strong></div>
+          </div>
+          <a class="download-button" href="https://github.com/OthinusG/octopath-traveler-0_autoresolve/archive/refs/heads/main.zip">
+            <span aria-hidden="true">↓</span> Download source ZIP
+          </a>
+          <div class="download-links">
+            <a href="https://github.com/OthinusG/octopath-traveler-0_autoresolve/blob/main/docs/VALIDATION.md">Runtime validation</a>
+            <a href="https://github.com/OthinusG/octopath-traveler-0_autoresolve/blob/main/docs/DEVELOPMENT.md">Build instructions</a>
+          </div>
+          <p class="loader-note">Source download requires building the native DLL. UE4SS is installed separately.</p>
+        </div>
+      </section>
+
+
+      <details class="mobile-toc">
+        <summary>On this page</summary>
+        <nav aria-label="On this page">
+          <a href="#overview">Overview</a>
+          <a href="#eligibility">Eligibility</a>
+          <a href="#install">Installation</a>
+          <a href="#settings">Settings</a>
+          <a href="#maintenance">Upgrade and uninstall</a>
+          <a href="#troubleshooting">Troubleshooting</a>
+        </nav>
+      </details>
+
+      <div class="content-grid">
+        <article class="article-column">
+          <section id="overview" class="content-card card">
+            <h2>Overview</h2>
+            <p>This mod only applies to ordinary random encounters triggered while walking on the map. Once the level threshold is met, it skips the battle transition and awards the enemy group's base rewards. Boss, story, fixed and event encounters remain normal battles; encounters that cannot be confirmed are not resolved automatically.</p>
+            <figure class="gameplay-preview">
+              <img src="assets/gameplay-en.png" width="3555" height="1971" alt="Octopath Traveler 0 with an English auto-resolve notification." loading="lazy" decoding="async">
+              <figcaption>In-game screenshot · English interface</figcaption>
+            </figure>
+            <div class="feature-grid">
+              <div><span class="feature-icon" aria-hidden="true">EXP</span><strong>Experience and job points</strong><p>Awards EXP, JP, and leaves, including verified native support, equipment, village and training rewards.</p></div>
+              <div><span class="feature-icon" aria-hidden="true">DROP</span><strong>Chance-based drops</strong><p>Adds drops within native inventory limits; only item quantity is truncated when a stack is full.</p></div>
+              <div><span class="feature-icon" aria-hidden="true">F6</span><strong>Quick toggle</strong><p>F6 toggles and saves the enabled state. Notifications follow the game's interface language.</p></div>
+            </div>
+            <p class="note">Preserves native rare and first-group selection. Active meals, quest-specific drops and unconfirmed encounters retain normal combat.</p>
+          </section>
+
+          <section id="eligibility" class="content-card card">
+            <h2>Eligibility</h2>
+            <p>An ordinary random encounter is skipped only when the highest active-party level meets the enemy-group and area thresholds:</p>
+            <div class="formula">Highest active-party level ≥ max(area danger level, highest level in the selected enemy group) + LevelMargin</div>
+            <p>The default is <code>LevelMargin=1</code>. Encounters outside the ordinary random-encounter path still use native battles, even when the level condition is met.</p>
+            <ul>
+              <li>Living active members and the native training roster receive verified rewards. Knocked-out active members receive no EXP or JP.</li>
+              <li>Active and training characters recover HP/SP only after actually levelling up.</li>
+              <li>Uses the verified native reward interfaces and training roster. See the runtime validation record for tested coverage.</li>
+            </ul>
+          </section>
+
+          <section id="install" class="content-card card">
+            <h2>Installation</h2>
+            <p>Targets Windows Steam AppID 3014320, build 22012444. Install official <a href="https://github.com/UE4SS-RE/RE-UE4SS/releases/tag/experimental-latest">UE4SS experimental</a> separately; verified archive: <code>UE4SS_v3.0.1-1181-g83330635.zip</code>.</p>
+            <ol class="steps">
+              <li>Download and extract the source ZIP. With Python 3, Clang, LLVM dlltool and lld-link available, build the package from the source directory:
+                <pre><code>python3 tools/package.py</code></pre>
+                See <a href="https://github.com/OthinusG/octopath-traveler-0_autoresolve/blob/main/docs/DEVELOPMENT.md">build requirements and checks</a>.</li>
+              <li>Exit the game. Extract <code>dist/OT0AutoResolve-0.1.0.zip</code> and copy its <code>OT0AutoResolve</code> folder into:
+                <pre><code>Octopath_Traveler0\Binaries\Win64\ue4ss\Mods\</code></pre></li>
+              <li>Keep <code>enabled.txt</code>. If your loader uses <code>ue4ss/Mods/mods.txt</code>, enable <code>OT0AutoResolve : 1</code> while preserving other entries.</li>
+              <li>Enter an ordinary field map; F6 toggles auto-resolve.</li>
+            </ol>
+            <p class="note">The repository ZIP contains source, not a prebuilt native DLL. Build the mod package before installation. Preserve existing loader settings and other mods.</p>
+          </section>
+
+          <section id="settings" class="content-card card">
+            <h2>Settings</h2>
+            <p>The configuration file is <code>ue4ss\Mods\OT0AutoResolve\config.ini</code>. Restart the game after editing it.</p>
+            <pre><code>[General]
+Enabled=1
+LevelMargin=1
+ShowUI=1</code></pre>
+            <dl class="settings-list">
+              <div><dt><code>Enabled</code></dt><dd><code>1</code> enables and <code>0</code> disables the mod; the hotkey saves this value.</dd></div>
+              <div><dt><code>LevelMargin</code></dt><dd>Level difference from 0–99, default 1; set to 0 to resolve at an equal level.</dd></div>
+              <div><dt><code>ShowUI</code></dt><dd><code>1</code> shows reward notifications; <code>0</code> hides them.</dd></div>
+            </dl>
+          </section>
+
+          <section id="maintenance" class="content-card card">
+            <h2>Upgrade and uninstall</h2>
+            <h3>Upgrade</h3>
+            <p>Exit the game, then replace only the <code>OT0AutoResolve\Scripts</code> folder, including its native DLL. Keep the existing <code>config.ini</code> and other mods.</p>
+            <h3>Uninstall</h3>
+            <p>Exit the game, delete the <code>ue4ss\Mods\OT0AutoResolve</code> folder, and remove its line from <code>ue4ss\Mods\mods.txt</code>. Keep shared loader files if other mods still use UE4SS.</p>
+          </section>
+
+          <section id="troubleshooting" class="content-card card">
+            <h2>Troubleshooting</h2>
+            <details class="faq-item">
+              <summary>What if F6 does nothing?</summary>
+              <p>Check UE4SS startup, <code>enabled.txt</code> or the existing mods.txt entry, and that <code>Scripts/ot0_native.dll</code> was built and installed. F6 is fixed; restart the game after manual configuration changes.</p>
+            </details>
+            <details class="faq-item">
+              <summary>Why do ordinary enemies still start a battle?</summary>
+              <p>Check that the party meets the current level threshold and that the encounter was triggered by walking on the map. Boss, story, fixed event, event and unconfirmed encounters always remain normal battles.</p>
+            </details>
+            <details class="faq-item">
+              <summary>Where can I find logs if rewards look wrong?</summary>
+              <p>The mod does not save the game. If an interface is unavailable, the normal battle proceeds; a reward-write error stops further automatic resolution. Check the game's <code>Win64/ue4ss/Mods/OT0AutoResolve/OT0AutoResolve.log</code>.</p>
+            </details>
+          </section>
+        </article>
+
+        <aside class="sidebar" aria-label="Quick information">
+          <section class="sidebar-card card">
+            <h2>Compatibility</h2>
+            <dl class="facts-list">
+              <div><dt>Game</dt><dd>Octopath Traveler 0</dd></div>
+              <div><dt>Platform</dt><dd>Windows · Steam</dd></div>
+              <div><dt>Game build</dt><dd>22012444</dd></div>
+              <div><dt>Required loader</dt><dd>Official UE4SS 3.0.1-1181-g83330635</dd></div>
+              <div><dt>Mod version</dt><dd>0.1.0</dd></div>
+            </dl>
+            <a class="text-link" href="https://github.com/UE4SS-RE/RE-UE4SS/releases/tag/experimental-latest">Official UE4SS release <span aria-hidden="true">↗</span></a>
+          </section>
+          <nav class="sidebar-card toc-card card" aria-label="Page sections">
+            <h2>Page sections</h2>
+            <a href="#overview">Overview</a>
+            <a href="#eligibility">Eligibility</a>
+            <a href="#install">Installation</a>
+            <a href="#settings">Settings</a>
+            <a href="#maintenance">Upgrade and uninstall</a>
+            <a href="#troubleshooting">Troubleshooting</a>
+          </nav>
+          <section class="sidebar-card source-card card">
+            <h2>Project resources</h2>
+            <a href="https://github.com/OthinusG/octopath-traveler-0_autoresolve">Source and issue tracking <span aria-hidden="true">↗</span></a>
+            <a href="https://github.com/OthinusG/octopath-traveler-0_autoresolve/blob/main/docs/VALIDATION.md">Runtime validation · v0.1.0 <span aria-hidden="true">↗</span></a>
+            <p>Mod source: all rights reserved. The preserved UE4SS MIT notice applies only to UE4SS.</p>
+          </section>
+        </aside>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <p><strong>OT0 Auto Resolve · Automatic Encounter Resolution</strong><br><span>Unofficial mod · Not affiliated with the game publisher</span></p>
+        <nav aria-label="Footer links">
+          <a href="https://github.com/OthinusG/octopath-traveler-0_autoresolve">Project source</a>
+          <a href="https://github.com/OthinusG/octopath-traveler-0_autoresolve/blob/main/NOTICE.md">NOTICE</a>
+        </nav>
+      </div>
+    </footer>
+  </body>
+</html>

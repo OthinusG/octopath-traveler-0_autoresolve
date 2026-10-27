@@ -1,0 +1,10 @@
+# Project Memory
+
+- OT0AutoResolve 0.1.0 targets Windows Steam AppID 3014320, build 22012444, with official UE4SS experimental build 3.0.1-1181-g83330635.
+- Native encounter selection and settlement require the project-owned freestanding Windows x64 module in native/. The Lua bootstrap loads it through UE4SS; no UE4SS SDK or source is required to build the mod.
+- Preserve native selection and restrict resolution to the verified ordinary field callsite. Unknown and protected battles remain native combat. Supported-build fingerprint checks precede hook installation.
+- Runtime coverage and remaining gameplay limits are recorded in docs/VALIDATION.md. Repository and website maintenance does not establish new runtime acceptance.
+- The repository originated from a UE4SS fork. Keep upstream commit history and the original MIT notice under LICENSES/UE4SS-MIT.txt; the mod source remains all rights reserved.
+- 2026-10-27: Cleaned the main tree to mod-owned source/docs/tools, mirroring OT1's separation from UE4SS. Removed inherited upstream source, submodules, build workflows and CNAME without rewriting history. Original MIT notice remains under LICENSES; OT0 native/Lua gameplay code is unchanged.
+- Homepage reuses the OT1 bilingual static site and CSS with OT0 assets, supported versions, installation/build requirements and fixed F6 configuration. No OT0 release assets existed during maintenance, so download buttons explicitly offer source ZIPs and explain the required DLL build.
+- Source packaging includes the bilingual documentation, images and notices linked by its README. Pages publishes docs/site; validation CI runs Lua, C++ logic and Windows cross-compilation/package checks. Do not restore upstream documentation deployment or its domain.

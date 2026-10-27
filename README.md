@@ -1,6 +1,6 @@
 # 歧路旅人 0 · 等级压制自动结算
 
-[English](README.en.md) · [使用说明](mod/README.md) · [验证记录](VALIDATION.md)
+[项目主页](https://othinusg.github.io/octopath-traveler-0_autoresolve/zh.html) · [English](README.en.md) · [使用说明](mod/README.md) · [验证记录](VALIDATION.md)
 
 适用于 Windows Steam 版的自动结算 Mod：当队伍等级明显高于普通地图暗雷时，跳过战斗并通过游戏原生接口发放奖励。
 
@@ -23,7 +23,7 @@
 
 ## 安装
 
-本仓库和安装包均不包含 UE4SS 加载器。先单独安装[官方 UE4SS 实验版](https://github.com/UE4SS-RE/RE-UE4SS/releases/tag/experimental-latest)，已验证归档为 `UE4SS_v3.0.1-1181-g83330635.zip`。将 `OT0AutoResolve` 放入：
+本仓库和安装包均不包含 UE4SS 加载器。先单独安装[官方 UE4SS 实验版](https://github.com/UE4SS-RE/RE-UE4SS/releases/tag/experimental-latest)，已验证归档为 `UE4SS_v3.0.1-1181-g83330635.zip`。[下载源码 ZIP](https://github.com/OthinusG/octopath-traveler-0_autoresolve/archive/refs/heads/main.zip)，按[构建说明](docs/DEVELOPMENT.md)运行 `python3 tools/package.py`。解压生成的 `dist/OT0AutoResolve-0.1.0.zip`，将其中 `OT0AutoResolve` 放入：
 
 ```text
 Octopath_Traveler0/Binaries/Win64/ue4ss/Mods/

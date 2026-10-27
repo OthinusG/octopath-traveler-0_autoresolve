@@ -24,3 +24,9 @@ python3 tools/package.py
 ```
 
 The executable hooks are specific to Steam build 22012444. Do not update offsets or fingerprints without re-verifying the call flow and protected encounter behavior in the target build. Never include `.local/`, game data, saves, PDB/SDK dumps, UE4SS binaries, or runtime logs in a public change.
+
+## Documentation site
+
+`docs/site/` contains the English and Chinese static homepage. The OT1 site is the visual reference: shared system fonts, 1052 px desktop container, light gray background, white cards, amber download controls and a single-column layout below 760 px. OT0 uses its own icon and uncut gameplay screenshots. There is no backend or runtime data integration.
+
+`.github/workflows/pages.yml` deploys that directory through GitHub Pages on main. `.github/workflows/validate.yml` checks only this mod; UE4SS remains an external loader. Source download links point to the repository archive until a prebuilt release is explicitly published.

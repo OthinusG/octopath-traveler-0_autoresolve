@@ -26,7 +26,10 @@ for source in (False, True):
             for file in sorted((ROOT / directory).glob("*")):
                 if file.is_file() and file.suffix in (".hpp", ".cpp", ".lua", ".py"):
                     files[str(file.relative_to(ROOT))] = file
-        files["docs/Tech-Spec.md"] = ROOT / "docs/Tech-Spec.md"
+        for name in ("AGENTS.md", "MEMORY.md", "README.en.md", "NOTICE.md", "mod/README.md",
+                     "docs/Tech-Spec.md", "docs/DEVELOPMENT.md", "docs/VALIDATION.md",
+                     "LICENSES/UE4SS-MIT.txt", "images/icon.png", "images/ot0rs_en.png", "images/ot0rs_zh.png"):
+            files[name] = ROOT / name
     with zipfile.ZipFile(path, "w", zipfile.ZIP_DEFLATED) as archive:
         for name, file in files.items():
             archive.write(file, name)

@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f1f3f8">
+    <meta name="description" content="歧路旅人 0 等级压制自动结算 Mod：适配版本、功能说明、安装与设置。">
+    <link rel="canonical" href="https://othinusg.github.io/octopath-traveler-0_autoresolve/zh.html">
+    <link rel="alternate" hreflang="en" href="https://othinusg.github.io/octopath-traveler-0_autoresolve/">
+    <link rel="alternate" hreflang="zh-CN" href="https://othinusg.github.io/octopath-traveler-0_autoresolve/zh.html">
+    <link rel="alternate" hreflang="x-default" href="https://othinusg.github.io/octopath-traveler-0_autoresolve/">
+    <meta property="og:title" content="歧路旅人 0 · 等级压制自动结算">
+    <meta property="og:description" content="了解 OT0 Auto Resolve v0.1.0 的适配条件、安装步骤与功能范围。">
+    <meta property="og:url" content="https://othinusg.github.io/octopath-traveler-0_autoresolve/zh.html">
+    <link rel="icon" href="assets/octopath-logo.png" type="image/png" sizes="256x256">
+    <link rel="stylesheet" href="assets/site.css?v=octopath-brand-1">
+    <title>歧路旅人 0 · 等级压制自动结算</title>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="#top" aria-label="OT0 Auto Resolve 首页">
+          <img class="brand-mark" src="assets/octopath-logo.png" width="48" height="48" alt="Octopath Traveler 0">
+          <span class="brand-name">Auto Resolve</span>
+        </a>
+        <nav class="header-links" aria-label="项目链接">
+          <a href="https://github.com/OthinusG/octopath-traveler-0_autoresolve">源码</a>
+          <a href="https://github.com/OthinusG/octopath-traveler-0_autoresolve/blob/main/docs/VALIDATION.md">验证记录</a>
+        </nav>
+        <nav class="language-switch" aria-label="语言">
+          <a href="./" lang="en">English</a>
+          <a href="zh.html" lang="zh-CN" aria-current="page">中文</a>
+        </nav>
+        <a class="header-download" href="https://github.com/OthinusG/octopath-traveler-0_autoresolve/archive/refs/heads/main.zip">源码 v0.1.0 <span aria-hidden="true">↓</span></a>
+      </div>
+    </header>
+
+    <main id="top" class="page-shell">
+      <nav class="breadcrumb" aria-label="面包屑">
+        <a href="https://github.com/OthinusG/octopath-traveler-0_autoresolve">项目仓库</a>
+        <span aria-hidden="true">/</span>
+        <span>Mod 详情</span>
+      </nav>
+
+      <section class="hero card" aria-labelledby="page-title">
+        <div class="hero-copy">
+          <img class="hero-logo" src="assets/octopath-logo.png" width="112" height="112" alt="Octopath Traveler 0">
+          <p class="eyebrow">OCTOPATH TRAVELER 0 · 非官方 Mod</p>
+          <h1 id="page-title">等级压制自动结算</h1>
+          <p class="hero-summary">队伍等级领先普通暗雷敌人时，跳过战斗转场并按原生规则结算奖励。</p>
+          <div class="tag-list" aria-label="版本与适配信息">
+            <span class="tag tag-version">v0.1.0</span>
+            <span class="tag">Windows · Steam</span>
+            <span class="tag">Build 22012444</span>
+            <span class="tag">UE4SS 3.0.1-1181-g83330635</span>
+          </div>
+        </div>
+        <div class="download-panel">
+          <div class="release-meta">
+            <div><span>当前版本</span><strong>0.1.0</strong></div>
+            <div><span>适配游戏版本</span><strong>Steam · 22012444</strong></div>
+            <div><span>加载器</span><strong>UE4SS 3.0.1-1181-g83330635（单独安装）</strong></div>
+          </div>
+          <a class="download-button" href="https://github.com/OthinusG/octopath-traveler-0_autoresolve/archive/refs/heads/main.zip">
+            <span aria-hidden="true">↓</span> 下载源码 ZIP
+          </a>
+          <div class="download-links">
+            <a href="https://github.com/OthinusG/octopath-traveler-0_autoresolve/blob/main/docs/VALIDATION.md">实机验证记录</a>
+            <a href="https://github.com/OthinusG/octopath-traveler-0_autoresolve/blob/main/docs/DEVELOPMENT.md">构建说明</a>
+          </div>
+          <p class="loader-note">源码需先构建原生 DLL；UE4SS 加载器单独安装。</p>
+        </div>
+      </section>
+
+
+      <details class="mobile-toc">
+        <summary>本页目录</summary>
+        <nav aria-label="本页目录">
+          <a href="#overview">功能说明</a>
+          <a href="#eligibility">结算条件</a>
+          <a href="#install">安装</a>
+          <a href="#settings">设置</a>
+          <a href="#maintenance">升级与卸载</a>
+          <a href="#troubleshooting">常见问题</a>
+        </nav>
+      </details>
+
+      <div class="content-grid">
+        <article class="article-column">
+          <section id="overview" class="content-card card">
+            <h2>功能说明</h2>
+            <p>只对地图行走触发的普通随机暗雷生效。达到等级门槛后，Mod 跳过战斗转场，结算敌群基础奖励。Boss、剧情战、固定事件战都保留正常战斗；无法确认的遭遇也不会自动结算。</p>
+            <figure class="gameplay-preview">
+              <img src="assets/gameplay-zh.png" width="3549" height="1962" alt="《歧路旅人 0》中文界面自动结算提示。" loading="lazy" decoding="async">
+              <figcaption>游戏内截图 · 中文界面奖励提示</figcaption>
+            </figure>
+            <div class="feature-grid">
+              <div><span class="feature-icon" aria-hidden="true">EXP</span><strong>经验与职业点数</strong><p>结算 EXP、JP 和金钱，包含已验证的原生被动、装备、村庄加成与训练奖励。</p></div>
+              <div><span class="feature-icon" aria-hidden="true">DROP</span><strong>概率掉落</strong><p>按原生背包容量加入掉落物；满堆叠时只截断道具数量。</p></div>
+              <div><span class="feature-icon" aria-hidden="true">F6</span><strong>快捷开关</strong><p>按 F6 切换并保存启用状态，提示语言跟随游戏界面语言。</p></div>
+            </div>
+            <p class="note">保留原生稀有／首次敌群抽选。限回合料理生效、任务专用掉落和无法确认的遭遇保留正常战斗。</p>
+          </section>
+
+          <section id="eligibility" class="content-card card">
+            <h2>结算条件</h2>
+            <p>仅当最高上场等级达到敌群与地区等级门槛时，才会跳过普通暗雷战斗：</p>
+            <div class="formula">最高上场等级 ≥ max（地区危险等级，抽中敌群最高等级）+ LevelMargin</div>
+            <p>默认 <code>LevelMargin=1</code>。即使等级符合，非普通随机遭遇仍进入原生战斗。</p>
+            <ul>
+              <li>存活出战角色与原生训练名单获得对应奖励；倒下的出战角色不获得 EXP 或 JP。</li>
+              <li>出战与训练角色真正升级后，该角色恢复 HP/SP。</li>
+              <li>通过已验证的原生奖励接口与训练名单结算；具体覆盖范围见实机验证记录。</li>
+            </ul>
+          </section>
+
+          <section id="install" class="content-card card">
+            <h2>安装</h2>
+            <p>适配 Windows Steam AppID 3014320、build 22012444。先单独安装官方 <a href="https://github.com/UE4SS-RE/RE-UE4SS/releases/tag/experimental-latest">UE4SS 实验版</a>；已验证归档为 <code>UE4SS_v3.0.1-1181-g83330635.zip</code>。</p>
+            <ol class="steps">
+              <li>下载并解压源码 ZIP，准备 Python 3、Clang、LLVM dlltool 与 lld-link，在源码目录构建：
+                <pre><code>python3 tools/package.py</code></pre>
+                依赖与检查命令见<a href="https://github.com/OthinusG/octopath-traveler-0_autoresolve/blob/main/docs/DEVELOPMENT.md">构建说明</a>。</li>
+              <li>退出游戏，解压生成的 <code>dist/OT0AutoResolve-0.1.0.zip</code>，将其中 <code>OT0AutoResolve</code> 文件夹复制到：
+                <pre><code>Octopath_Traveler0\Binaries\Win64\ue4ss\Mods\</code></pre></li>
+              <li>保留 <code>enabled.txt</code>。若加载器使用 <code>ue4ss/Mods/mods.txt</code>，启用 <code>OT0AutoResolve : 1</code>，保留其他条目。</li>
+              <li>进入普通地图即可生效；按 F6 切换自动结算。</li>
+            </ol>
+            <p class="note">仓库 ZIP 是源码，不含预编译原生 DLL。请先构建安装包；保留现有加载器设置与其他 Mod。</p>
+          </section>
+
+          <section id="settings" class="content-card card">
+            <h2>设置</h2>
+            <p>配置文件位于 <code>ue4ss\Mods\OT0AutoResolve\config.ini</code>。编辑后重启游戏。</p>
+            <pre><code>[General]
+Enabled=1
+LevelMargin=1
+ShowUI=1</code></pre>
+            <dl class="settings-list">
+              <div><dt><code>Enabled</code></dt><dd><code>1</code> 启用，<code>0</code> 关闭；快捷键会保存此值。</dd></div>
+              <div><dt><code>LevelMargin</code></dt><dd>等级差范围 0–99，默认 1；设为 0 可同等级结算。</dd></div>
+              <div><dt><code>ShowUI</code></dt><dd><code>1</code> 显示奖励提示，<code>0</code> 隐藏。</dd></div>
+            </dl>
+          </section>
+
+          <section id="maintenance" class="content-card card">
+            <h2>升级与卸载</h2>
+            <h3>升级</h3>
+            <p>退出游戏后，只替换 <code>OT0AutoResolve\Scripts</code> 文件夹（含原生 DLL），保留已有 <code>config.ini</code> 和其他 Mod。</p>
+            <h3>卸载</h3>
+            <p>退出游戏，删除 <code>ue4ss\Mods\OT0AutoResolve</code> 文件夹，并移除 <code>ue4ss\Mods\mods.txt</code> 中对应的一行。其他 Mod 仍需 UE4SS 时，请保留共享加载器文件。</p>
+          </section>
+
+          <section id="troubleshooting" class="content-card card">
+            <h2>常见问题</h2>
+            <details class="faq-item">
+              <summary>按 F6 没有反应怎么办？</summary>
+              <p>检查 UE4SS 是否启动、<code>enabled.txt</code> 或现有 mods.txt 条目，以及 <code>Scripts/ot0_native.dll</code> 是否已构建并安装。F6 为固定快捷键；手动编辑配置后重启游戏。</p>
+            </details>
+            <details class="faq-item">
+              <summary>为什么普通敌人仍进入战斗？</summary>
+              <p>检查队伍等级是否达到当前门槛，并确认该战斗由地图移动触发。Boss、剧情、固定事件及无法确认的遭遇始终保留正常战斗。</p>
+            </details>
+            <details class="faq-item">
+              <summary>奖励异常时去哪里查看记录？</summary>
+              <p>Mod 不主动保存游戏。接口不可用时会保留正常战斗；奖励写入异常会停止后续自动结算，记录在游戏的 <code>Win64/ue4ss/Mods/OT0AutoResolve/OT0AutoResolve.log</code> 中。</p>
+            </details>
+          </section>
+        </article>
+
+        <aside class="sidebar" aria-label="快速信息">
+          <section class="sidebar-card card">
+            <h2>适配信息</h2>
+            <dl class="facts-list">
+              <div><dt>游戏</dt><dd>Octopath Traveler 0</dd></div>
+              <div><dt>平台</dt><dd>Windows · Steam</dd></div>
+              <div><dt>游戏 Build</dt><dd>22012444</dd></div>
+              <div><dt>必需加载器</dt><dd>官方 UE4SS 3.0.1-1181-g83330635</dd></div>
+              <div><dt>Mod 版本</dt><dd>0.1.0</dd></div>
+            </dl>
+            <a class="text-link" href="https://github.com/UE4SS-RE/RE-UE4SS/releases/tag/experimental-latest">UE4SS 官方发布页 <span aria-hidden="true">↗</span></a>
+          </section>
+          <nav class="sidebar-card toc-card card" aria-label="页面章节">
+            <h2>页面章节</h2>
+            <a href="#overview">功能说明</a>
+            <a href="#eligibility">结算条件</a>
+            <a href="#install">安装</a>
+            <a href="#settings">设置</a>
+            <a href="#maintenance">升级与卸载</a>
+            <a href="#troubleshooting">常见问题</a>
+          </nav>
+          <section class="sidebar-card source-card card">
+            <h2>项目资源</h2>
+            <a href="https://github.com/OthinusG/octopath-traveler-0_autoresolve">源代码与问题反馈 <span aria-hidden="true">↗</span></a>
+            <a href="https://github.com/OthinusG/octopath-traveler-0_autoresolve/blob/main/docs/VALIDATION.md">v0.1.0 实机验证记录 <span aria-hidden="true">↗</span></a>
+            <p>Mod 源码保留所有权利；UE4SS MIT 许可仅适用于 UE4SS。</p>
+          </section>
+        </aside>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <p><strong>歧路旅人 0 · 等级压制自动结算</strong><br><span>非官方 Mod · 与游戏发行方无关联</span></p>
+        <nav aria-label="页脚链接">
+          <a href="https://github.com/OthinusG/octopath-traveler-0_autoresolve">项目源码</a>
+          <a href="https://github.com/OthinusG/octopath-traveler-0_autoresolve/blob/main/NOTICE.md">NOTICE</a>
+        </nav>
+      </div>
+    </footer>
+  </body>
+</html>

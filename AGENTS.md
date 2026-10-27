@@ -1,7 +1,7 @@
 # Project Rules
 
 ## Scope
-Maintain the Octopath Traveler 0 ordinary-encounter auto-resolve mod. Read README.md, MEMORY.md and Tech-Spec.md before implementation changes.
+Maintain the Octopath Traveler 0 ordinary-encounter auto-resolve mod. Read README.md, MEMORY.md and docs/Tech-Spec.md before implementation changes.
 
 ## Target and safety
 - Windows Steam AppID 3014320, installed build 22012444; official UE4SS experimental build `3.0.1-1181-g83330635`.

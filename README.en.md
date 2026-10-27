@@ -1,6 +1,6 @@
 # Octopath Traveler 0 · Auto Resolve
 
-[简体中文](README.md) · [User Guide](mod/README.md) · [Validation](VALIDATION.md)
+[Homepage](https://othinusg.github.io/octopath-traveler-0_autoresolve/) · [简体中文](README.md) · [User Guide](mod/README.md) · [Validation](VALIDATION.md)
 
 A Windows Steam mod that skips eligible over-levelled ordinary field encounters and grants rewards through OT0's native game interfaces.
 
@@ -25,7 +25,7 @@ Target: Steam AppID **3014320**, build **22012444**, with official UE4SS experim
 
 ## Installation
 
-Install the supported UE4SS experimental loader separately. Copy `OT0AutoResolve` into `Octopath_Traveler0/Binaries/Win64/ue4ss/Mods/`, preserving the loader's other files and mods. Enable its `mods.txt` entry if your UE4SS setup requires it. The mod is enabled by default; press **F6** to toggle it.
+Install the supported UE4SS experimental loader separately. [Download the source ZIP](https://github.com/OthinusG/octopath-traveler-0_autoresolve/archive/refs/heads/main.zip) and follow the [build instructions](docs/DEVELOPMENT.md) to run `python3 tools/package.py`. Extract `dist/OT0AutoResolve-0.1.0.zip` and copy `OT0AutoResolve` into `Octopath_Traveler0/Binaries/Win64/ue4ss/Mods/`, preserving the loader's other files and mods. Enable its `mods.txt` entry if your UE4SS setup requires it. The mod is enabled by default; press **F6** to toggle it.
 
 Configure `Enabled`, `LevelMargin` (0–99) and `ShowUI` in `config.ini`. Uninstall with the game closed by removing only this mod folder and its `mods.txt` entry.
 
