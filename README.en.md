@@ -1,42 +1,48 @@
-# Octopath Traveler 0 · Auto Resolve
+<img src="images/icon.png" alt="Octopath Traveler 0" width="96" height="96">
 
-[Homepage](https://othinusg.github.io/octopath-traveler-0_autoresolve/) · [简体中文](README.md) · [User Guide](mod/README.md) · [Validation](VALIDATION.md)
+# OT0 Auto Resolve
 
-A Windows Steam mod that skips eligible over-levelled ordinary field encounters and grants rewards through OT0's native game interfaces.
+[Homepage](https://othinusg.github.io/octopath-traveler-0_autoresolve/) · [简体中文](README.md)
 
-<p align="center"><img src="images/icon.png" alt="Octopath Traveler 0 icon" width="180"></p>
+Source release 0.1.0 for Octopath Traveler 0, Windows Steam AppID 3014320, build 22012444 and official UE4SS experimental build 3.0.1-1181-g83330635.
 
-![English in-game screenshot](images/ot0rs_en.png)
+Resolve eligible over-levelled ordinary walking encounters before combat and grant rewards through game APIs. Boss, story, fixed, event and unclassified encounters remain normal battles. F6 toggles the mod and persists its setting.
 
-| English | 简体中文 |
-| --- | --- |
-| ![English result](images/ot0rs_en.png) | ![Chinese result](images/ot0rs_zh.png) |
+- Highest active-party level must meet both area danger and selected enemy levels plus the configured margin. Forward/back active members count; guests do not.
+- Native encounter selection preserves rare and first-group selections.
+- Verified support, equipment, village and training reward rules apply to EXP, JP and leaves. Weighted drops respect native result and inventory limits.
+- Knocked-out active members receive no EXP/JP. Actual level-ups refill that active or training character's HP/SP.
+- Notifications follow the text language: Chinese for Chinese interfaces, English for everything else. Voice settings are independent.
+- Active meals and quest-specific drops retain normal combat. No unverified battle-performance, stealing/capture or first-species effects are simulated.
 
-Target: Steam AppID **3014320**, build **22012444**, with official UE4SS experimental build **3.0.1-1181-g83330635**. See [validation notes](VALIDATION.md) for tested coverage and limits.
+![In-game screenshot: automatic encounter rewards in the English interface](images/ot0rs_en.png)
 
-## Features
+## Install
 
-- Only resolves ordinary encounters triggered by walking on the field. Boss, story, fixed, event and unclassified battles remain native combat.
-- Requires the highest active party level to exceed the area's danger level and every selected enemy level by the configured margin (default **1**).
-- Preserves native encounter selection, including rare and first-group selections.
-- Grants EXP, JP, leaves, weighted item drops and verified training rewards. Native level-ups restore the character's HP/SP.
-- F6 toggles auto-resolve. Chinese text languages show Chinese notifications; all other languages show English.
-- Active meals and quest-specific drop cases retain normal combat.
+Install official [UE4SS experimental](https://github.com/UE4SS-RE/RE-UE4SS/releases/tag/experimental-latest) separately. The verified archive is `UE4SS_v3.0.1-1181-g83330635.zip`; the moving experimental release may contain a different build.
 
-## Installation
+[Download the source ZIP](https://github.com/OthinusG/octopath-traveler-0_autoresolve/archive/refs/heads/main.zip), extract it, and run `python3 tools/package.py` with the [documented build tools](docs/DEVELOPMENT.md). The repository archive contains no prebuilt native DLL, so copying its mod folder alone is insufficient.
 
-Install the supported UE4SS experimental loader separately. [Download the source ZIP](https://github.com/OthinusG/octopath-traveler-0_autoresolve/archive/refs/heads/main.zip) and follow the [build instructions](docs/DEVELOPMENT.md) to run `python3 tools/package.py`. Extract `dist/OT0AutoResolve-0.1.0.zip` and copy `OT0AutoResolve` into `Octopath_Traveler0/Binaries/Win64/ue4ss/Mods/`, preserving the loader's other files and mods. Enable its `mods.txt` entry if your UE4SS setup requires it. The mod is enabled by default; press **F6** to toggle it.
+With the game closed, extract `dist/OT0AutoResolve-0.1.0.zip` and copy `OT0AutoResolve` into `Octopath_Traveler0/Binaries/Win64/ue4ss/Mods/`. Keep `enabled.txt`. If the loader uses `ue4ss/Mods/mods.txt`, enable `OT0AutoResolve : 1` and preserve other entries. Restart the game.
 
-Configure `Enabled`, `LevelMargin` (0–99) and `ShowUI` in `config.ini`. Uninstall with the game closed by removing only this mod folder and its `mods.txt` entry.
+For upgrades, exit the game and replace only `OT0AutoResolve/Scripts`, including its DLL, preserving `config.ini`. Defaults under `[General]`: Enabled=1, LevelMargin=1, ShowUI=1. F6 is fixed. See the [Chinese user guide](mod/README.md).
 
-## Build and checks
+## Test and package
 
-See [技术规格 / Tech Spec](docs/Tech-Spec.md) for architecture and build commands. The release package does not contain UE4SS, game files, or development probes. The executable-specific hooks reject unrecognized builds before installation.
+Requires Lua for local bootstrap tests, a C++17 compiler for logic tests, and Python 3, Clang, LLVM dlltool and lld-link for Windows cross-compilation. The game's Lua runtime is supplied by UE4SS.
 
-## Validation limits
+```sh
+luac -p mod/OT0AutoResolve/Scripts/main.lua
+lua tests/test_bootstrap.lua "$PWD"
+clang++ -std=c++17 -Wall -Wextra -Werror tests/test_logic.cpp -o /tmp/ot0-test-logic
+/tmp/ot0-test-logic
+python3 tools/package.py
+```
 
-The supported build has passed repeat ordinary field resolutions, reward updates, training rewards, level-up HP/SP recovery, F6, and below-threshold fallback. A positive item drop was not observed in the recorded samples, and individual boss/story/fixed battles were not each played through. See [VALIDATION.md](VALIDATION.md).
+The packager produces `dist/OT0AutoResolve-0.1.0.zip`, `dist/OT0AutoResolve-0.1.0-source.zip` and `dist/SHA256SUMS.txt`. The mod package contains its own native DLL, but no loader binaries. Normal builds require no game extraction, PDBs, SDK dumps or UE4SS source.
 
-## License and notices
+The supported build passed repeat ordinary resolutions, active/training rewards, level-up HP/SP recovery, F6 persistence, below-threshold fallback and a shipping cold start. No positive item drop was observed in recorded acceptance samples; individual boss/story/fixed battles were not each played through. Other executable builds are not claimed compatible.
 
-The OT0 mod source is not licensed for redistribution; all rights are reserved. The [UE4SS MIT license](LICENSES/UE4SS-MIT.txt) applies only to UE4SS, not this mod. This is an unofficial community mod, not affiliated with Square Enix.
+To uninstall, exit the game, remove only `ue4ss/Mods/OT0AutoResolve` and its own `mods.txt` entry, and retain the shared loader if other mods use it.
+
+See [development notes](docs/DEVELOPMENT.md), [validation scope](docs/VALIDATION.md), and [notices](NOTICE.md). The upstream UE4SS MIT notice is retained under `LICENSES/UE4SS-MIT.txt`; it applies only to UE4SS. The OT0 mod source remains all rights reserved. This is an unofficial community mod, not affiliated with the publisher.
