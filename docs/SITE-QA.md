@@ -7,7 +7,7 @@ Visual source: the OT1 repository's `docs/site/` and Pages workflow. OT0 retains
 | Layout and spacing | Two-column desktop, one-column mobile | Same CSS/container/card spacing; checked both widths and languages |
 | Typography | System fonts and responsive title sizes | Same font stack and title sizing; primary text fits |
 | Palette and controls | Gray background, white cards, amber download | Preserved colors, borders and focus styling |
-| Images | Game-specific icon and full gameplay image | Uses existing OT0 PNG assets at their actual aspect ratios, without cropping |
+| Images | Game-specific icon and full gameplay image | Uses WebP copies of the existing OT0 screenshots at their actual aspect ratios, without cropping; repository PNG originals remain unchanged |
 | Compatibility copy | Short OT1 loader/version strings | Exact OT0 experimental build; loader labels do not shrink on mobile |
 | Download action | OT1 prebuilt release | Intentional difference: source ZIP plus native build instructions; no nonexistent release links |
 | Interaction | Language links, section anchors, FAQ, mobile contents | Links/assets/anchors resolve; FAQ and mobile contents expand |
